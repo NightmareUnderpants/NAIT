@@ -3,102 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Главная страница</title>
 </head>
-<body bgcolor="202020" text="ffffff" link="ffffff" vlink="aaaaaa">
-    <nav>
-        <h3>
-            <font face="Courier New, Courier, monospace">
-                <a href="/index.html" id="main_link">Главная страница</a> | 
-                <a href="/tables.html" id="tables_link">Табличные данные</a>
-            </font>
-        </h3>
-    </nav>
-    <hr width="80%">
-    <p align="center"><img src="/img/PERSEPTUAL_logo.png" alt="Логотип проекта Perseptual" width="500"></p>
-    <h1 align="center">Добро пожаловать на главную страницу</h1>
-    
-    <h2 align="center">О нашем проекте</h2>
-    <p align="justify">
-        <font size="4">
-        Проект <strong>Perseptual</strong> родился в 2025 году как исследовательская инициатива группы энтузиастов игровой индустрии. 
-        Мы заметили, что большинство игровых студий собирают огромное количество данных, но не всегда эффективно их анализируют.
-        </font>
-    </p>
+<body>
 
-    <h3>Наша миссия</h3>
-    <p>
-        Мы создаем <em>единую платформу</em> для сбора, анализа и визуализации игровых метрик. 
-        Наша цель - помочь разработчикам принимать обоснованные решения на основе данных.
-    </p>
-
-    <div align="center">
-        <a href="/perseptual_description.html" title="Визуализация игры Perseptual">
-            <img src="/img/PERSEPTUAL_ART_01.jpg" width="400" alt="Скриншот игры">
-        </a>
-        <br>
-        <small>Визуализация игры Perseptual</small>
+    <!-- МЕНЮ -->
+    <div class="header-bar">
+        <div class="logo">
+            <img src="/img/PERSEPTUAL_logo.png" alt="Логотип проекта Perseptual">
+        </div>
+            <nav class="nav-menu">
+            <a href="/index.html" id="main_link" class="active">Главная страница</a>
+            <a href="/tables.html" id="tables_link">Табличные данные</a>
+        </nav>
     </div>
 
-    <h3>Ключевые направления работы</h3>
-    <ul type="circle">
-        <li><font color="ffff99">Сбор статистики игровых сессий</font></li>
-        <li><font color="99ff99">Анализ поведения игроков</font></li>
-        <li><font color="ff9999">Визуализация игровых метрик</font></li>
-        <li><font color="9999ff">Сравнительные исследования</font></li>
-    </ul>
+    <!-- ГАЛЛЕРЕЯ -->
+    <div class="gallery-container">
+        <div class="gallery-block">
+            <img class="gallery-item" src="/img/PERSEPTUAL_ART_01.jpg" alt="1">
+        </div>
 
-    <details>
-        <summary><strong>Подробнее об истории создания</strong></summary>
-        <p>
-            Все началось с небольшого инди-проекта "Perseptual", в ходе разработки которого мы столкнулись с необходимостью 
-            глубокого анализа игрового процесса. Не найдя подходящих инструментов, мы решили создать собственное решение.
-        </p>
-        <p>
-            За первый год мы проанализировали данные более <strong>50 игровых проектов</strong> и помогли улучшить 
-            пользовательский опыт для тысяч игроков.
-        </p>
-    </details>
+        <div class="gallery-block">
+            <img class="gallery-item" src="/img/PERSEPTUAL_ART_02.jpg" alt="2">
+        </div>
 
-    <h3>Наши партнеры и проекты</h3>
-    <ol type="I">
-        <li><a href="/perseptual_description.html" target="_blank">Perseptual</a> - сюжетноориентированный хоррор в духе старых Silent Hill.</li>
-        <li><a href="/perseptual_description.html" target="_blank">Dark room</a> - симулятор кошмарной комнаты</li>
-        <li><a href="/perseptual_description.html" target="_blank">Infinity Pod'ezd</a> - головоломка о поиске выхода из бесконечного подъезда</li>
-    </ol>
-
-    <div align="center">
-        <a href="/perseptual_description.html" title="Скриншот Perseptual">
-            <img src="/img/PERSEPTUAL_SCREENSHOT_01.jpg" width="300" alt="Скриншот игры">
-            <img src="/img/PERSEPTUAL_SCREENSHOT_02.jpg" width="300" alt="Скриншот игры">
-        </a>
+        <div class="gallery-block">
+            <img class="split-gallery-item" src="/img/PERSEPTUAL_SCREENSHOT_01.jpg" alt="3">
+            <img class="split-gallery-item" src="/img/PERSEPTUAL_SCREENSHOT_02.jpg" alt="4">
+        </div>
     </div>
 
-    <h3>Типы данных, которые мы собираем</h3>
-    <p>
-        Наша система собирает разнообразную информацию для последующего анализа и построения графиков:
-    </p>
-    <ul>
-        <li><u>Временные метрики</u>: продолжительность игровых сессий</li>
-        <li><u>Поведенческие данные</u>: выбор игроков и предпочтения</li>
-        <li><u>Технические показатели</u>: производительность и стабильность</li>
-        <li><u>Обратная связь</u>: отзывы игроков об игре</li>
-    </ul>
 
-    <details>
-        <summary><font color="99ffff">Планы на будущее</font></summary>
-        <p>
-            В ближайших планах - запуск <strong>открытого API</strong> для независимых разработчиков и 
-            создание интерактивной панели управления данными в реальном времени.
-        </p>
-        <p>
-            Мы также работаем над интеграцией машинного обучения для прогнозирования игровых трендов.
-        </p>
-    </details>
+    <!-- БИОГРАФИИ -->
+    <div class="bio-container">
+        <div class="bio-block">
+            <img class="bio-img" src="/img/avatar_02.png" alt="">
+            <h3>Гриша (grisha88)</h3>
+            <p>Главный дизайнер</p>
+            <a href="#">Подробнее</a>
+        </div>
 
-    <h3 align="center">Присоединяйтесь к нашему сообществу!</h3>
+        <div class="bio-block">
+            <img class="bio-img" src="/img/avatar_01.png" alt="">
+            <h3>Александр (UNDER ALYX)</h3>
+            <p>Главный разработчик PERCEPTUAL</p>
+            <a href="#">Подробнее</a>
+        </div>
+
+        <div class="bio-block">
+            <img class="bio-img" src="/img/avatar_03.png" alt="">
+            <h3>Никита (evangelion)</h3>
+            <p>SEO</p>
+            <a href="#">Подробнее</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="block">
+            <div class="block-split">
+                <div class="img-wrap">
+                    <img src="/img/PERSEPTUAL_57_01.png" alt="">
+                </div>
+                <div class="text-block">
+                    <h2>Ключевые направления работы</h2>
+                    <p>
+                        Мы собираем статистику игровых сессий, анализируем поведение игроков и создаём наглядные визуальные метрики.<br>
+                        Эти данные помогают находить проблемные места и улучшать игровой процесс.
+                    </p>
+                    <a href="#">Подробнее»</a>
+                </div>
+            </div>
+
+            <div class="block-split">
+                <div class="img-wrap">
+                    <img src="/img/PERSEPTUAL_Art_Monster_1.jpg" alt="">
+                </div>
+                <div class="text-block">
+                    <h2>Наши партнеры и проекты</h2>
+                    <p>
+                        Мы сотрудничаем с инди-командами и помогаем внедрять аналитику в их игры.<br>
+                        Среди проектов: хоррор Perseptual, атмосферный Dark Room и экспериментальная головоломка Infinity Pod'ezd.
+                    </p>
+                    <a href="#">Подробнее»</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="big-block">
+                <h2>Подробнее об истории создания</h2>
+                <p>
+                    Все началось с небольшого инди-проекта "Perseptual", в ходе разработки которого мы столкнулись с необходимостью 
+                    глубокого анализа игрового процесса. Не найдя подходящих инструментов, мы решили создать собственное решение.
+                </p>
+                <p>
+                    За первый год мы проанализировали данные более <strong>50 игровых проектов</strong> и помогли улучшить 
+                    пользовательский опыт для тысяч игроков.
+                </p>    
+                <a href="#">Подробнее»</a>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-split">
+                <div class="text-block left">
+                    <h2>Типы данных, которые мы собираем</h2>
+                    <p>
+                        Мы фиксируем длительность сессий, выборы игроков, показатели производительности и отзывы.<br>
+                        Эта информация формирует основу для отчётов и визуализации ключевых игровых метрик.
+                    </p>
+                    <a href="#">Подробнее»</a>
+                </div>
+                <div class="img-wrap right">
+                    <img src="/img/PERSEPTUAL_57_02.png" alt="">
+                </div>
+            </div>
+
+            <div class="block-split">
+                <div class="text-block left">
+                    <h2>Планы на будущее</h2>
+                    <p>
+                        Мы готовим открытый API, инструменты анализа в реальном времени и новые алгоритмы прогнозирования.<br>
+                        Цель — обеспечить разработчиков удобными и гибкими аналитическими возможностями.
+                    </p>
+                    <a href="#">Подробнее»</a>
+                </div>
+                <div class="img-wrap right">
+                    <img src="/img/PERSEPTUAL_57_03.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 align="center">О себе</h3>
     <p align="center">
-        Следите за нашими обновлениями и новыми исследованиями в мире игровой аналитики.
+        Онищенко Александр Евгеньевич. Б9123-09.03.04 (подгруппа 2)
         <br>
         <font size="2">
             <a href="mailto:contact@perseptual.org">Написать нам</a> | 
