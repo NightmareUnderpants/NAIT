@@ -95,12 +95,6 @@ a:visited {
     display: block;
 }
 
-.split-gallery-item + .split-gallery-item {
-    margin-top: 2px;
-}
-
-
-
 
 
 
@@ -159,7 +153,7 @@ a:visited {
     padding: 0 10px;
     font-size: 16px;
     white-space: normal;
-    box-sizing: border-box; /* ← ВАЖНО */
+    box-sizing: border-box;
 }
 
 .block-split {
@@ -181,7 +175,7 @@ a:visited {
 .text-block {
     float: left;
     width: 75%;
-    padding-left: 10px; /* небольшой зазор */
+    padding-left: 10px;
     box-sizing: border-box;
 }
 
