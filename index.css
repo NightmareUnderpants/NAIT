@@ -14,29 +14,35 @@ a:visited {
 
 
 
-
 .header-bar {
-    text-align: left;
     padding: 12px 20px;
     border-top: 4px double #fff;
     border-bottom: 4px double #fff;
+
+    white-space: nowrap;
+    font-size: 0;
 }
 
 .header-bar > * {
     display: inline-block;
-    vertical-align: middle; 
+    vertical-align: middle;
     font-size: 16px;
 }
 
+.logo {
+    width: 30%;
+}
+
 .logo img {
-    height: 20px;
-    width: auto;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .nav-menu {
     font-family: "Courier New", Courier, monospace;
-    margin-left: auto; 
-    float: right;
+    width: 70%;
+    text-align: right;
 }
 
 .nav-menu a {
@@ -49,7 +55,6 @@ a:visited {
     color: green;
     font-weight: bold;
     font-size: larger;
-
     border-left: 4px double #fff;
     border-right: 4px double #fff;
     padding-top: 12px;
@@ -62,27 +67,39 @@ a:visited {
 
 
 
+
 .gallery-container {
-    display: inline-block;
+    margin: 0 auto; 
+    width: 90%;
     font-size: 0;
+    white-space: nowrap;
 }
 
 .gallery-block {
     display: inline-block;
     vertical-align: top;
-    margin-right: 2px;
+    width: 33.333%;
 }
 
 .gallery-item {
-    width: 400px;
+    width: 100%;
     aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
 }
 
 .split-gallery-item {
-    width: 298px;
+    aspect-ratio: 8 / 3;
+    width: 100%;
+    object-fit: cover;
     display: block;
-    margin-bottom: 2px;
 }
+
+.split-gallery-item + .split-gallery-item {
+    margin-top: 2px;
+}
+
+
 
 
 
@@ -138,11 +155,11 @@ a:visited {
 .block {
     display: inline-block;
     vertical-align: top;
-
     width: 33.333%;
     padding: 0 10px;
     font-size: 16px;
     white-space: normal;
+    box-sizing: border-box; /* ← ВАЖНО */
 }
 
 .block-split {
@@ -162,19 +179,20 @@ a:visited {
 }
 
 .text-block {
+    float: left;
     width: 75%;
-    padding-left: 110px;
+    padding-left: 10px; /* небольшой зазор */
+    box-sizing: border-box;
 }
 
 .block-split .img-wrap.right {
     float: right;
-    width: 25%;
 }
 
 .block-split .text-block.left {
     float: left;
-    width: 75%;
     padding-left: 0;
+    padding-right: 12px;
 }
 
 .img-wrap img {
