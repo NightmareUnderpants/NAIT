@@ -10,29 +10,24 @@
 
     <!-- МЕНЮ -->
     <div class="header-bar">
-        <div class="logo">
-            <img src="/img/PERSEPTUAL_logo.png" alt="Логотип проекта Perseptual">
-        </div>
-            <nav class="nav-menu">
-            <a href="/index.html" id="main_link" class="active">Главная страница</a>
-            <a href="/tables.html" id="tables_link">Табличные данные</a>
+        <nav class="nav-menu">
+            <a href="/index.html" class="menu-item active">Главная страница</a>
+            <a href="/tables.html" class="menu-item">Таблица</a>
+            <a href="/games.html" class="menu-item">Список игр</a>
+            <a href="/partners.html" class="menu-item">Наши партнеры</a>
         </nav>
     </div>
 
+
     <!-- ГАЛЛЕРЕЯ -->
     <div class="gallery-container">
-        <div class="gallery-block">
-            <img class="gallery-item" src="/img/PERSEPTUAL_ART_01.jpg" alt="1">
-        </div>
+        <img class="gallery-item" src="/img/PERSEPTUAL_ART_01.jpg" alt="1">
+        <img class="gallery-item" src="/img/PERSEPTUAL_ART_02.jpg" alt="2">
 
-        <div class="gallery-block">
-            <img class="gallery-item" src="/img/PERSEPTUAL_ART_02.jpg" alt="2">
-        </div>
+        <img class="gallery-item" src="/img/PERSEPTUAL_Art_03.png" alt="3">
+        <img class="gallery-item" src="/img/PERSEPTUAL_Art_04.png" alt="4">
 
-        <div class="gallery-block">
-            <img class="split-gallery-item" src="/img/PERSEPTUAL_SCREENSHOT_01.jpg" alt="3">
-            <img class="split-gallery-item" src="/img/PERSEPTUAL_SCREENSHOT_02.jpg" alt="4">
-        </div>
+        <img class="big-gallery-item" src="/img/PERSEPTUAL_SCREENSHOT_01.jpg" alt="big">
     </div>
 
 
@@ -40,7 +35,7 @@
     <div class="bio-container">
         <div class="bio-block">
             <img class="bio-img" src="/img/avatar_02.png" alt="">
-            <h3>Гриша (grisha88)</h3>
+            <h3>Гриша (bratan14)</h3>
             <p>Главный дизайнер</p>
             <a href="#">Подробнее</a>
         </div>
@@ -58,84 +53,81 @@
             <p>SEO</p>
             <a href="#">Подробнее</a>
         </div>
+
+        <div class="bio-block">
+            <img class="bio-img" src="/img/avatar_04.jpg" alt="">
+            <h3>Маша (mash88)</h3>
+            <p>Лицо команды</p>
+            <a href="#">Подробнее</a>
+        </div>
     </div>
 
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
     <div class="container">
-        <div class="block">
-            <div class="block-split">
-                <div class="img-wrap">
-                    <img src="/img/PERSEPTUAL_57_01.png" alt="">
-                </div>
-                <div class="text-block">
+        <div class="column left highlight">
+            <div class="row">
+                <div class="text">
                     <h2>Ключевые направления работы</h2>
                     <p>
-                        Мы собираем статистику игровых сессий, анализируем поведение игроков и создаём наглядные визуальные метрики.<br>
-                        Эти данные помогают находить проблемные места и улучшать игровой процесс.
+                        Мы собираем детальную статистику игровых сессий,
+                        анализируем поведение игроков в динамике и
+                        создаём наглядные визуальные метрики для команд разработки.
+                        Полученные данные позволяют выявлять проблемные места,
+                        тестировать гипотезы и постепенно улучшать игровой процесс.
                     </p>
-                    <a href="#">Подробнее»</a>
+                </div>
+                <div class="image">
+                    <img src="/img/PERSEPTUAL_57_01.png" alt="">
                 </div>
             </div>
+        </div>
 
-            <div class="block-split">
-                <div class="img-wrap">
+        <div class="column center">
+            <h2>История проекта</h2>
+            <p>
+                Проект вырос из практической необходимости глубокой аналитики
+                игрового процесса. В ходе работы над собственным инди-проектом
+                мы столкнулись с отсутствием удобных инструментов,
+                способных показать реальное поведение игроков.
+                Это подтолкнуло нас к созданию собственного решения,
+                которое со временем превратилось в полноценную аналитическую платформу
+                для игровых команд разного масштаба.
+            </p>
+        </div>
+
+        <div class="column right">
+            <div class="row highlight">
+                <div class="image">
                     <img src="/img/PERSEPTUAL_Art_Monster_1.jpg" alt="">
                 </div>
-                <div class="text-block">
-                    <h2>Наши партнеры и проекты</h2>
+                <div class="text">
+                    <h2>Типы данных</h2>
                     <p>
-                        Мы сотрудничаем с инди-командами и помогаем внедрять аналитику в их игры.<br>
-                        Среди проектов: хоррор Perseptual, атмосферный Dark Room и экспериментальная головоломка Infinity Pod'ezd.
+                        Мы фиксируем длительность и частоту игровых сессий,
+                        ключевые действия игроков, точки выхода,
+                        показатели производительности и технические события.
                     </p>
-                    <a href="#">Подробнее»</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="block">
-            <div class="big-block">
-                <h2>Подробнее об истории создания</h2>
-                <p>
-                    Все началось с небольшого инди-проекта "Perseptual", в ходе разработки которого мы столкнулись с необходимостью 
-                    глубокого анализа игрового процесса. Не найдя подходящих инструментов, мы решили создать собственное решение.
-                </p>
-                <p>
-                    За первый год мы проанализировали данные более <strong>50 игровых проектов</strong> и помогли улучшить 
-                    пользовательский опыт для тысяч игроков.
-                </p>    
-                <a href="#">Подробнее»</a>
-            </div>
-        </div>
-
-        <div class="block">
-            <div class="block-split">
-                <div class="text-block left">
-                    <h2>Типы данных, которые мы собираем</h2>
-                    <p>
-                        Мы фиксируем длительность сессий, выборы игроков, показатели производительности и отзывы.<br>
-                        Эта информация формирует основу для отчётов и визуализации ключевых игровых метрик.
-                    </p>
-                    <a href="#">Подробнее»</a>
-                </div>
-                <div class="img-wrap right">
-                    <img src="/img/PERSEPTUAL_57_02.png" alt="">
                 </div>
             </div>
 
-            <div class="block-split">
-                <div class="text-block left">
-                    <h2>Планы на будущее</h2>
-                    <p>
-                        Мы готовим открытый API, инструменты анализа в реальном времени и новые алгоритмы прогнозирования.<br>
-                        Цель — обеспечить разработчиков удобными и гибкими аналитическими возможностями.
-                    </p>
-                    <a href="#">Подробнее»</a>
-                </div>
-                <div class="img-wrap right">
+            <div class="row highlight">
+                <div class="image">
                     <img src="/img/PERSEPTUAL_57_03.png" alt="">
+                </div>
+                <div class="text">
+                    <h2>Будущее</h2>
+                    <p>
+                        В ближайших планах — запуск открытого API,
+                        инструменты анализа в реальном времени
+                        и внедрение новых алгоритмов прогнозирования.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <h3 align="center">О себе</h3>
     <p align="center">
