@@ -1,241 +1,30 @@
-body {
-    text-align: center;
-    background-color: #202020;
-    color: #ffffff;
+body { background:#202020; color:#fff; }
+a { color:#fff; }
+a:visited { color:#aaa; }
+.navbar { border-top: 3px double #fff; border-bottom: 3px double #fff; }
+
+.card { background:#1a1a1a; border-color: rgba(255,255,255,.18); }
+.card-soft { border-radius: 8px; }
+
+.avatar {
+  width: 72px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px;
 }
 
-a:link {
-    color: #ffffff;
+/* Карусель: фиксируем приятную высоту, чтобы не была на весь экран */
+#mainCarousel .carousel-item img{
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
 }
 
-a:visited {
-    color: #aaaaaa;
+/* На больших экранах чуть выше */
+@media (min-width: 992px){
+  #mainCarousel .carousel-item img{
+    height: 380px;
+  }
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-
-.header-bar {
-    padding: 0 20px;
-    border-top: 3px double #fff;
-    border-bottom: 3px double #fff;
-    display: flex;
-    width: 100%;
-    min-height: 30px;
-}
-
-.nav-menu {
-    font-family: "Courier New", Courier, monospace;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.menu-item {
-    color: #ffffff;
-    padding: 10px 16px;
-    font-size: 14px;
-    min-width: 140px;
-}
-
-@media (max-width: 768px) {
-    .nav-menu {
-        width: 100%;
-    }
-    
-    .menu-item {
-        flex: 0 0 calc(50% - 16px);
-        min-width: auto;
-        padding: 12px 8px;
-    }
-}
-
-.menu-item.active {
-    color: green;
-    font-weight: bold;
-    font-size: 16px;
-    outline: 3px double #fff;
-}
-
-
-
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);   /* 3 колонки */
-    grid-template-rows: repeat(2, 1fr);      /* 2 строки */
-    gap: 4px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-/* Все картинки — на всю ячейку */
-.gallery-item,
-.big-gallery-item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    aspect-ratio: 25 / 6;
-}
-
-/* Позиционируем большую картинку в 3-ю колонку и обе строки */
-.big-gallery-item {
-    grid-column: 3;        /* 3-я колонка */
-    grid-row: 1 / span 2;  /* от 1-й строки на 2 строки вниз */
-}
-
-
-
-.bio-container { 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 90%;
-    margin: 0 auto;
-}
-
-.bio-block {
-    font-size: 12px;
-    text-align: center;
-
-    padding: 10px 20px;
-    box-sizing: border-box;
-    line-height: 1.2;
-}
-
-.bio-img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%; 
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 5px;
-}
-
-.bio-block p,
-.bio-block h3 {
-    margin: 5px 0;
-}
-
-
-
-/* ========= CONTAINER ========= */
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* ========= COMMON COLUMN ========= */
-
-.column {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-/* ========= HIGHLIGHT ========= */
-
-.highlight {
-    border: 1px solid #fff;
-    padding: 12px;
-}
-
-/* ========= ROW ========= */
-
-.row {
-    display: flex;
-    gap: 14px;
-    align-items: stretch;
-}
-
-/* ========= TEXT ========= */
-
-.text {
-    flex: 1;
-    font-size: 13px;
-}
-
-.text h2 {
-    margin: 0 0 8px;
-    font-size: 14px;
-}
-
-.text p {
-    margin: 0;
-    line-height: 1.35;
-    text-align: justify;
-}
-
-/* ========= LEFT COLUMN ========= */
-
-.left .row {
-    align-items: stretch;
-}
-
-.left .image {
-    width: 35%;
-    aspect-ratio: 1 / 1;
-    flex-shrink: 0;
-}
-
-.left img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ========= CENTER COLUMN ========= */
-
-.center {
-    padding: 12px;
-}
-
-.center h2 {
-    margin: 0 0 10px;
-    text-align: center;
-}
-
-.center p {
-    font-size: 14px;
-    text-align: justify;
-}
-
-/* ========= RIGHT COLUMN ========= */
-
-.right {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.right .row {
-    align-items: stretch;
-}
-
-.right .image {
-    width: 25%;
-    aspect-ratio: 1 / 1;
-    flex-shrink: 0;
-}
-
-.right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
-
-/* * {
-    outline: 1px solid rgba(255,0,0,0.3);
-} */
