@@ -12,106 +12,82 @@ a:visited {
     color: #aaaaaa;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 
 .header-bar {
-    padding: 12px 20px;
-    border-top: 4px double #fff;
-    border-bottom: 4px double #fff;
-
-    white-space: nowrap;
-    font-size: 0;
-}
-
-.header-bar > * {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 16px;
-}
-
-.logo {
-    width: 30%;
-}
-
-.logo img {
+    padding: 0 20px;
+    border-top: 3px double #fff;
+    border-bottom: 3px double #fff;
+    display: flex;
     width: 100%;
-    height: auto;
-    display: block;
+    min-height: 30px;
 }
 
 .nav-menu {
     font-family: "Courier New", Courier, monospace;
-    width: 70%;
-    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
-.nav-menu a {
-    padding: 0 8px;
+.menu-item {
     color: #ffffff;
-    text-decoration: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    min-width: 140px;
 }
 
-.nav-menu a.active {
+
+.menu-item.active {
     color: green;
     font-weight: bold;
-    font-size: larger;
-    border-left: 4px double #fff;
-    border-right: 4px double #fff;
-    padding-top: 12px;
-    padding-bottom: 18px;
+    font-size: 16px;
+    outline: 3px double #fff;
 }
-
-
-
-
-
 
 
 
 .gallery-container {
-    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 колонки */
+    grid-template-rows: repeat(2, 1fr);      /* 2 строки */
+    gap: 4px;
     width: 90%;
-    font-size: 0;
-    white-space: nowrap;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.gallery-block {
-    display: inline-block;
-    vertical-align: top;
-    width: 33.333%;
-}
-
-.gallery-item {
+.gallery-item,
+.big-gallery-item {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
     display: block;
+    aspect-ratio: 25 / 6;
 }
 
-.split-gallery-item {
-    aspect-ratio: 8 / 3;
-    width: 100%;
-    object-fit: cover;
-    display: block;
+.big-gallery-item {
+    grid-column: 3;
+    grid-row: 1 / span 2;
 }
-
-
-
 
 
 
 .bio-container { 
-    font-size: 0;  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: 90%;
     margin: 0 auto;
 }
 
 .bio-block {
-    display: inline-block;
-    width: 33.333%;
-    vertical-align: top;
-
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
 
     padding: 10px 20px;
@@ -120,8 +96,8 @@ a:visited {
 }
 
 .bio-img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%; 
     object-fit: cover;
     display: block;
@@ -135,77 +111,153 @@ a:visited {
 
 
 
-
-
-
 .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     width: 90%;
     margin: 0 auto;
-
-    white-space: nowrap;
-    font-size: 0;
 }
 
-.block {
-    display: inline-block;
-    vertical-align: top;
-    width: 33.333%;
-    padding: 0 10px;
-    font-size: 16px;
-    white-space: normal;
+.column {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
 }
 
-.block-split {
-    margin-bottom: 20px;
-    padding: 10px;
-    outline: 1px solid #fff;
-    overflow: hidden;
+.highlight {
+    border: 1px solid #fff;
+    padding: 12px;
 }
 
-.big-block {
-    text-align: left;
+.row {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
 }
 
-.img-wrap {
-    float: left;
-    width: 25%;
+.text {
+    flex: 1;
+    font-size: 13px;
 }
 
-.text-block {
-    float: left;
-    width: 75%;
-    padding-left: 10px;
-    box-sizing: border-box;
+.text h2 {
+    margin: 0 0 8px;
+    font-size: 14px;
 }
 
-.block-split .img-wrap.right {
-    float: right;
+.text p {
+    margin: 0;
+    line-height: 1.35;
+    text-align: justify;
 }
 
-.block-split .text-block.left {
-    float: left;
-    padding-left: 0;
-    padding-right: 12px;
+.left .row {
+    align-items: stretch;
 }
 
-.img-wrap img {
+.left .image {
+    width: 35%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
+
+.left img {
     width: 100%;
     height: 100%;
-    aspect-ratio: 5 / 7;
-    display: block;
+    object-fit: cover;
 }
 
-.big-block {
-    display: block;
-    padding: 15px;
-    min-height: 360px;
+.center {
+    padding: 12px;
 }
 
-.block .text-block h2 { margin: 0 0 10px 0; font-size: 20px; text-align: left; }
-.block .text-block p { margin: 0 0 12px 0; line-height: 1.3; text-align: justify; }
-.block .text-block a { display: block; text-decoration: none; text-align: right; }
+.center h2 {
+    margin: 0 0 10px;
+    text-align: center;
+}
 
+.center p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.right .row {
+    align-items: stretch;
+}
+
+.right .image {
+    width: 25%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
+
+.right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+  /* МЕНЮ: 2 колонки */
+  .nav-menu{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .menu-item{
+    min-width: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ГАЛЕРЕЯ: 1 колонка */
+  .gallery-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;  /* важно: убираем repeat(2, 1fr) */
+  }
+
+  .big-gallery-item{
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* чтобы картинки не растягивались "на 100% высоты" в одну колонку */
+  .gallery-item,
+  .big-gallery-item{
+    height: auto;
+    aspect-ratio: auto;     /* можно оставить, но так обычно приятнее на мобилке */
+  }
+
+  /* БИО: 1 колонка */
+  .bio-container{
+    grid-template-columns: 1fr;
+  }
+
+  /* ОСНОВНОЙ КОНТЕНТ: 1 колонка */
+  .container{
+    grid-template-columns: 1fr;
+  }
+
+  /* (опционально) если в рядах тесно, превращаем "картинка+текст" в колонку */
+  .row{
+    flex-direction: column;
+  }
+
+  .left .image,
+  .right .image{
+    width: 100%;
+  }
+}
 
 
 /* * {
