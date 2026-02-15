@@ -233,7 +233,53 @@ a:visited {
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .nav-menu{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
 
+  .menu-item{
+    min-width: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .big-gallery-item{
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .gallery-item,
+  .big-gallery-item{
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .bio-container{
+    grid-template-columns: 1fr;
+  }
+
+  .container{
+    grid-template-columns: 1fr;
+  }
+
+  .row{
+    flex-direction: column;
+  }
+
+  .left .image,
+  .right .image{
+    width: 100%;
+  }
+}
 
 
 /* * {
