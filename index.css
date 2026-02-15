@@ -43,18 +43,6 @@ a:visited {
     min-width: 140px;
 }
 
-@media (max-width: 768px) {
-    .nav-menu {
-        width: 100%;
-    }
-    
-    .menu-item {
-        flex: 0 0 calc(50% - 16px);
-        min-width: auto;
-        padding: 12px 8px;
-    }
-}
-
 .menu-item.active {
     color: green;
     font-weight: bold;
@@ -66,15 +54,14 @@ a:visited {
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);   /* 3 колонки */
-    grid-template-rows: repeat(2, 1fr);      /* 2 строки */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 4px;
     width: 90%;
     margin: 0 auto;
     padding: 10px;
 }
 
-/* Все картинки — на всю ячейку */
 .gallery-item,
 .big-gallery-item {
     width: 100%;
@@ -84,10 +71,9 @@ a:visited {
     aspect-ratio: 25 / 6;
 }
 
-/* Позиционируем большую картинку в 3-ю колонку и обе строки */
 .big-gallery-item {
-    grid-column: 3;        /* 3-я колонка */
-    grid-row: 1 / span 2;  /* от 1-й строки на 2 строки вниз */
+    grid-column: 3;
+    grid-row: 1 / span 2;
 }
 
 
@@ -124,8 +110,6 @@ a:visited {
 
 
 
-/* ========= CONTAINER ========= */
-
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -134,30 +118,22 @@ a:visited {
     margin: 0 auto;
 }
 
-/* ========= COMMON COLUMN ========= */
-
 .column {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
 }
 
-/* ========= HIGHLIGHT ========= */
-
 .highlight {
     border: 1px solid #fff;
     padding: 12px;
 }
-
-/* ========= ROW ========= */
 
 .row {
     display: flex;
     gap: 14px;
     align-items: stretch;
 }
-
-/* ========= TEXT ========= */
 
 .text {
     flex: 1;
@@ -175,8 +151,6 @@ a:visited {
     text-align: justify;
 }
 
-/* ========= LEFT COLUMN ========= */
-
 .left .row {
     align-items: stretch;
 }
@@ -193,8 +167,6 @@ a:visited {
     object-fit: cover;
 }
 
-/* ========= CENTER COLUMN ========= */
-
 .center {
     padding: 12px;
 }
@@ -208,8 +180,6 @@ a:visited {
     font-size: 14px;
     text-align: justify;
 }
-
-/* ========= RIGHT COLUMN ========= */
 
 .right {
     display: flex;
