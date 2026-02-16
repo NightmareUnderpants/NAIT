@@ -1,0 +1,21 @@
+{
+  "name": "nait",
+  "version": "1.0.0",
+  "description": "Repository contains website for practice in NAIT",
+  "main": "test_lab.js",
+  "scripts": {
+    "build:index": "pug src/pug/pages/index.pug --out dist --pretty",
+    "build:item": "pug src/pug/pages/item.pug --out dist --pretty",
+    "build:tables": "node src/js/build-tables.js",
+    "build:stylus": "stylus src/stylus/main.styl -o dist/assets/css",
+    "build": "npm run build:index && npm run build:item && npm run build:tables && npm run build:stylus"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pug": "^3.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.64.0"
+  }
+}

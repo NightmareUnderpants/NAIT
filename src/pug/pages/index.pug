@@ -1,0 +1,122 @@
+extends ../layouts/base.pug
+
+block vars
+  - var title = "Главная"
+  - var currentPage = "index"
+
+block content
+  section.container.my-4
+    #mainCarousel.carousel.slide.carousel-fade(data-bs-ride="carousel")
+
+      .carousel-indicators
+        button.active(type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1")
+        button(type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2")
+        button(type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3")
+        button(type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4")
+        button(type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4" aria-label="Slide 5")
+
+      .carousel-inner.rounded.overflow-hidden.border.border-light-subtle
+        .carousel-item.active
+          img.d-block.w-100(src="/img/PERSEPTUAL_ART_01.jpg" alt="1")
+        .carousel-item
+          img.d-block.w-100(src="/img/PERSEPTUAL_ART_02.jpg" alt="2")
+        .carousel-item
+          img.d-block.w-100(src="/img/PERSEPTUAL_SCREENSHOT_03.jpg" alt="3")
+        .carousel-item
+          img.d-block.w-100(src="/img/PERSEPTUAL_SCREENSHOT_02.jpg" alt="4")
+        .carousel-item
+          img.d-block.w-100(src="/img/PERSEPTUAL_SCREENSHOT_01.jpg" alt="5")
+
+      button.carousel-control-prev(type="button" data-bs-target="#mainCarousel" data-bs-slide="prev")
+        span.carousel-control-prev-icon(aria-hidden="true")
+        span.visually-hidden Назад
+
+      button.carousel-control-next(type="button" data-bs-target="#mainCarousel" data-bs-slide="next")
+        span.carousel-control-next-icon(aria-hidden="true")
+        span.visually-hidden Вперёд
+
+
+  section.container.my-4
+    .row.g-3.text-center
+
+      .col-12.col-sm-6.col-lg-3
+        .card.h-100.p-3.card-soft
+          img.rounded-circle.avatar(src="/img/avatar_02.png" alt="")
+          h6.mt-2.mb-1 Гриша (bratan14)
+          .text-white-50.small.mb-2 Главный дизайнер
+          a.btn.btn-outline-light.btn-sm.mx-auto(href="#") Подробнее
+
+      .col-12.col-sm-6.col-lg-3
+        .card.h-100.p-3.card-soft
+          img.rounded-circle.avatar(src="/img/avatar_01.png" alt="")
+          h6.mt-2.mb-1 Александр (UNDER ALYX)
+          .text-white-50.small.mb-2 Главный разработчик PERCEPTUAL
+          a.btn.btn-outline-light.btn-sm.mx-auto(href="#") Подробнее
+
+      .col-12.col-sm-6.col-lg-3
+        .card.h-100.p-3.card-soft
+          img.rounded-circle.avatar(src="/img/avatar_03.png" alt="")
+          h6.mt-2.mb-1 Никита (evangelion)
+          .text-white-50.small.mb-2 SEO
+          a.btn.btn-outline-light.btn-sm.mx-auto(href="#") Подробнее
+
+      .col-12.col-sm-6.col-lg-3
+        .card.h-100.p-3.card-soft
+          img.rounded-circle.avatar(src="/img/avatar_04.jpg" alt="")
+          h6.mt-2.mb-1 Маша (mash88)
+          .text-white-50.small.mb-2 Лицо команды
+          a.btn.btn-outline-light.btn-sm.mx-auto(href="#") Подробнее
+
+
+  main.container.my-4
+    .row.g-4.align-items-stretch
+
+      .col-12.col-lg-4
+        .card.h-100.p-3
+          .row.g-3.align-items-stretch
+            .col-12.col-md-8
+              h5 Ключевые направления работы
+              p.mb-0.text-white-50
+                | Мы собираем детальную статистику игровых сессий, анализируем поведение игроков
+                |  в динамике и создаём наглядные визуальные метрики для команд разработки.
+                |  Полученные данные позволяют выявлять проблемные места, тестировать гипотезы
+                |  и постепенно улучшать игровой процесс.
+            .col-12.col-md-4
+              img.img-fluid.rounded.h-100.w-100(src="/img/PERSEPTUAL_57_01.png" style="object-fit:cover;" alt="")
+
+      //- CENTER
+      .col-12.col-lg-4
+        .card.h-100.p-3
+          h5.text-center История проекта
+          p.mb-0.text-white-50
+            | Проект вырос из практической необходимости глубокой аналитики игрового процесса.
+            |  В ходе работы над собственным инди-проектом мы столкнулись с отсутствием удобных
+            |  инструментов, способных показать реальное поведение игроков. Это подтолкнуло нас
+            |  к созданию собственного решения, которое со временем превратилось в полноценную
+            |  аналитическую платформу для игровых команд разного масштаба.
+
+      //- RIGHT
+      .col-12.col-lg-4
+        .d-grid.gap-3
+
+          .card.p-3
+            .row.g-3.align-items-stretch
+              .col-12.col-md-4
+                img.img-fluid.rounded.h-100.w-100(src="/img/PERSEPTUAL_Art_Monster_1.jpg" style="object-fit:cover;" alt="")
+              .col-12.col-md-8
+                h5 Типы данных
+                p.mb-0.text-white-50
+                  | Мы фиксируем длительность и частоту игровых сессий,
+                  |  ключевые действия игроков, точки выхода,
+                  |  показатели производительности и технические события.
+
+          .card.p-3
+            .row.g-3.align-items-stretch
+              .col-12.col-md-4
+                img.img-fluid.rounded.h-100.w-100(src="/img/PERSEPTUAL_57_03.png" style="object-fit:cover;" alt="")
+              .col-12.col-md-8
+                h5 Будущее
+                p.mb-0.text-white-50
+                  | В ближайших планах — запуск открытого API,
+                  |  инструменты анализа в реальном времени
+                  |  и внедрение новых алгоритмов прогнозирования.

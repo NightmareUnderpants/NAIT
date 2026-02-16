@@ -1,0 +1,161 @@
+extends ../layouts/base.pug
+
+block vars
+  - var title = "Табличные данные"
+  - var currentPage = "tables"
+
+block content
+  .container.my-4
+    h1.text-center Табличные данные
+
+    h3.text-center.mt-4 Данные отдельных пользователей
+
+    .table-responsive.mt-3
+      table.table.table-dark.table-striped.table-bordered.align-middle.text-center
+        thead
+          tr
+            th(style="min-width:60px") ID
+            th(style="min-width:160px") Игра в которую играл
+            th(style="min-width:240px") Продолжительность игровой сессии (минуты)
+            th(style="min-width:240px") Производительность и стабильность (к/сек)
+            th(style="min-width:180px") Отзыв игрока (от 1 до 10)
+        tbody
+          each r in data.rows
+            tr
+              td= r.id
+              td= r.game
+              td= r.duration
+              td= r.performance
+              td= r.review
+
+    hr.my-4
+
+    //- CHART SETTINGS
+    h3.text-center Настройка графика
+    form.card.card-soft.p-3.table-page__card(action="/generate-chart" method="post")
+      .row.g-3
+        .col-12.col-md-4
+          label.form-label.fw-semibold(for="chart_type") Тип графика:
+          select#chart_type.form-select(name="chart_type")
+            option(value="line") Линейный график
+            option(value="bar") Столбчатая диаграмма
+            option(value="pie") Круговая диаграмма
+
+        .col-12.col-md-4
+          .fw-semibold.mb-1 Данные для отображения:
+          .form-check
+            input.form-check-input#series_duration(type="checkbox" name="data_series" value="duration")
+            label.form-check-label(for="series_duration") Средняя продолжительность сессии
+          .form-check
+            input.form-check-input#series_perf(type="checkbox" name="data_series" value="performance")
+            label.form-check-label(for="series_perf") Максимальная производительность
+
+        .col-12.col-md-4
+          .fw-semibold.mb-1 Ось X:
+          .form-check
+            input.form-check-input#x_games(type="radio" name="x_axis" value="games")
+            label.form-check-label(for="x_games") По играм
+          .form-check
+            input.form-check-input#x_players(type="radio" name="x_axis" value="players")
+            label.form-check-label(for="x_players") По игрокам
+
+      .mt-3.d-flex.gap-2.flex-wrap
+        button.btn.btn-outline-light(type="submit") Создать график
+        button.btn.btn-outline-secondary(type="reset") Сбросить настройки
+
+    hr.my-4
+
+    //- SORT
+    h3.text-center Сортировка данных
+    form.card.card-soft.p-3.table-page__card(action="/sort-data" method="get")
+      .row.g-3
+        .col-12.col-lg-4
+          label.form-label.fw-semibold Первичная сортировка:
+          select.form-select(name="sort_column_1")
+            option(value="player_id") ID игрока
+            option(value="game") Название игры
+            option(value="duration") Продолжительность сессии
+            option(value="performance") Производительность
+            option(value="review") Оценка игрока
+          .mt-2
+            .form-check.form-check-inline
+              input.form-check-input#s1a(type="radio" name="sort_order_1" value="asc" checked)
+              label.form-check-label(for="s1a") По возрастанию
+            .form-check.form-check-inline
+              input.form-check-input#s1d(type="radio" name="sort_order_1" value="desc")
+              label.form-check-label(for="s1d") По убыванию
+
+        .col-12.col-lg-4
+          label.form-label.fw-semibold Вторичная сортировка:
+          select.form-select(name="sort_column_2")
+            option(value="none") Не использовать
+            option(value="player_id") ID игрока
+            option(value="game") Название игры
+            option(value="duration") Продолжительность сессии
+            option(value="performance") Производительность
+            option(value="review") Оценка игрока
+          .mt-2
+            .form-check.form-check-inline
+              input.form-check-input#s2a(type="radio" name="sort_order_2" value="asc" checked)
+              label.form-check-label(for="s2a") По возрастанию
+            .form-check.form-check-inline
+              input.form-check-input#s2d(type="radio" name="sort_order_2" value="desc")
+              label.form-check-label(for="s2d") По убыванию
+
+        .col-12.col-lg-4
+          label.form-label.fw-semibold Третичная сортировка:
+          select.form-select(name="sort_column_3")
+            option(value="none") Не использовать
+            option(value="player_id") ID игрока
+            option(value="game") Название игры
+            option(value="duration") Продолжительность сессии
+            option(value="performance") Производительность
+            option(value="review") Оценка игрока
+          .mt-2
+            .form-check.form-check-inline
+              input.form-check-input#s3a(type="radio" name="sort_order_3" value="asc" checked)
+              label.form-check-label(for="s3a") По возрастанию
+            .form-check.form-check-inline
+              input.form-check-input#s3d(type="radio" name="sort_order_3" value="desc")
+              label.form-check-label(for="s3d") По убыванию
+
+      .mt-3.d-flex.gap-2.flex-wrap
+        button.btn.btn-outline-light(type="submit") Применить сортировку
+        button.btn.btn-outline-secondary(type="reset") Сбросить
+
+    hr.my-4
+
+    h3.text-center Фильтрация данных
+    form.card.card-soft.p-3.table-page__card(action="/filter-data" method="get")
+      .row.g-3
+        .col-12.col-md-6.col-lg-4
+          label.form-label.fw-semibold ID игрока:
+          .d-flex.gap-2
+            input.form-control(type="number" name="min_player_id" min="1" max="17" value="1" placeholder="от")
+            input.form-control(type="number" name="max_player_id" min="1" max="17" value="17" placeholder="до")
+
+        .col-12.col-md-6.col-lg-4
+          label.form-label.fw-semibold Игра:
+          input.form-control(type="text" name="game" placeholder="например: Perseptual")
+
+        .col-12.col-lg-4
+          label.form-label.fw-semibold Продолжительность (мин):
+          .d-flex.gap-2
+            input.form-control(type="number" name="min_duration" min="0" max="200" value="0" placeholder="от")
+            input.form-control(type="number" name="max_duration" min="0" max="200" value="200" placeholder="до")
+
+        .col-12.col-lg-6
+          label.form-label.fw-semibold Производительность:
+          .d-flex.gap-2
+            input.form-control(type="number" name="min_performance" min="100" max="200" value="100" placeholder="от")
+            input.form-control(type="number" name="max_performance" min="100" max="200" value="200" placeholder="до")
+
+        .col-12.col-lg-6
+          label.form-label.fw-semibold Оценка:
+          .d-flex.gap-2
+            input.form-control(type="number" name="min_review" min="1" max="10" value="1" placeholder="от")
+            input.form-control(type="number" name="max_review" min="1" max="10" value="10" placeholder="до")
+
+      .mt-3.d-flex.gap-2.flex-wrap
+        button.btn.btn-outline-light(type="submit") Применить фильтры
+        button.btn.btn-outline-secondary(type="reset") Сбросить все фильтры
