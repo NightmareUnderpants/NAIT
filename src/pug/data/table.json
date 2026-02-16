@@ -1,15 +1,15 @@
 {
   "rows": [
     { "id": 1, "game": "Perseptual", "duration": 54, "performance": 177, "review": 7.3 },
-    { "id": 1, "game": "Dark room", "duration": 89, "performance": 153, "review": 6.6 },
-    { "id": 1, "game": "Infinity Pod'ezd", "duration": 86, "performance": 166, "review": 9.1 },
+    { "id": 1, "game": "Отец", "duration": 89, "performance": 153, "review": 6.6 },
+    { "id": 1, "game": "Jura New Year 2026", "duration": 86, "performance": 166, "review": 9.1 },
 
     { "id": 2, "game": "Perseptual", "duration": 67, "performance": 192, "review": 8.9 },
-    { "id": 2, "game": "Dark room", "duration": 33, "performance": 123, "review": 8.3 },
-    { "id": 2, "game": "Infinity Pod'ezd", "duration": 92, "performance": 158, "review": 8.5 },
+    { "id": 2, "game": "Отец", "duration": 33, "performance": 123, "review": 8.3 },
+    { "id": 2, "game": "Jura New Year 2026", "duration": 92, "performance": 158, "review": 8.5 },
 
     { "id": 3, "game": "Perseptual", "duration": 42, "performance": 185, "review": 8.1 },
-    { "id": 3, "game": "Dark room", "duration": 41, "performance": 134, "review": 7.1 },
-    { "id": 3, "game": "Infinity Pod'ezd", "duration": 71, "performance": 171, "review": 8.8 }
+    { "id": 3, "game": "Отец", "duration": 41, "performance": 134, "review": 7.1 },
+    { "id": 3, "game": "Jura New Year 2026", "duration": 71, "performance": 171, "review": 8.8 }
   ]
 }

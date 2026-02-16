@@ -5,10 +5,10 @@
   "main": "test_lab.js",
   "scripts": {
     "build:index": "pug src/pug/pages/index.pug --out dist --pretty",
-    "build:item": "pug src/pug/pages/item.pug --out dist --pretty",
+    "build:games": "node src/js/build-games.js",
     "build:tables": "node src/js/build-tables.js",
     "build:stylus": "stylus src/stylus/main.styl -o dist/assets/css",
-    "build": "npm run build:index && npm run build:item && npm run build:tables && npm run build:stylus"
+    "build": "npm run build:index && npm run build:games && npm run build:tables && npm run build:stylus"
   },
   "keywords": [],
   "author": "",

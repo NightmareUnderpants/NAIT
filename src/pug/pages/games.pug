@@ -1,0 +1,25 @@
+extends ../layouts/base.pug
+
+block vars
+  - var title = "Список игр"
+
+block content
+  .container.my-4
+    .text-center.mb-4
+      h1.mb-2.text-light Наши проекты
+      p.text-white-50.mb-0 Подборка проектов команды (описания и медиа).
+
+      each game in games
+        section.card.card-soft.p-3.mb-4
+          .row.g-3.align-items-stretch
+
+            .col-12.col-lg-5
+              .ratio.ratio-16x9.rounded.overflow-hidden.border.border-light-subtle
+                img.w-100.h-100(src=game.image alt=game.title style="object-fit:cover;")
+
+            .col-12.col-lg-7
+              h3.mb-2.text-light= game.title
+              p.mb-2.text-white-50
+                span.fw-semibold Жанр:
+                |  #{game.genre}
+              p.mb-0.text-light.text-start= game.description
