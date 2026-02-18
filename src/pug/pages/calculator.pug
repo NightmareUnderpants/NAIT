@@ -1,0 +1,91 @@
+extends ../layouts/base.pug
+
+block vars
+  - var title = "Калькулятор ромба"
+
+block content
+  main.container.my-4
+
+    section.card.p-3.mb-4
+      .row.g-3.align-items-end
+        .col-12.col-md-8
+          label.form-label.fw-semibold(for="inputType") Тип входных данных
+          select#inputType.form-select
+            option(value="diagonals" selected) Диагонали (d1 и d2)
+            option(value="sideAngle") Сторона и угол (a и α)
+        .col-12.col-md-4.d-grid
+          button#btnShow.btn.btn-outline-light(type="button") Показать
+
+    .row.g-4
+
+      .col-12.col-lg-5
+        section.card.p-3
+          h5.mb-3 Схема
+          .figure-wrap
+            img#figureImg(
+              src="/img/rhombus_diagonals.png"
+              alt="Ромб: диагонали"
+            )
+          p.text-white-50.small.mt-3.mb-0
+            | Подсказка: введите значения, выберите характеристики и нажмите «Вычислить».
+
+      .col-12.col-lg-7
+
+        section.card.p-3.mb-4
+          h5.mb-3 Входные данные
+
+          #inputsDiagonals
+            .row.g-3
+              .col-12.col-md-6
+                label.form-label(for="d1") Диагональ d1
+                input#d1.form-control(type="text" inputmode="decimal" placeholder="например 10.5")
+                .error-msg#err-d1(hidden) Ошибка ввода
+              .col-12.col-md-6
+                label.form-label(for="d2") Диагональ d2
+                input#d2.form-control(type="text" inputmode="decimal" placeholder="например 7.2")
+                .error-msg#err-d2(hidden) Ошибка ввода
+
+          #inputsSideAngle(hidden)
+            .row.g-3
+              .col-12.col-md-6
+                label.form-label(for="a") Сторона a
+                input#a.form-control(type="text" inputmode="decimal" placeholder="например 8")
+                .error-msg#err-a(hidden) Ошибка ввода
+              .col-12.col-md-6
+                label.form-label(for="alpha") Угол α (в градусах)
+                input#alpha.form-control(type="text" inputmode="decimal" placeholder="например 60")
+                .error-msg#err-alpha(hidden) Ошибка ввода
+
+        section.card.p-3.mb-4
+          h5.mb-3 Что вычислить
+          .row.g-2
+            .col-12.col-sm-6
+              .form-check
+                input#cbHeight.form-check-input(type="checkbox" checked)
+                label.form-check-label(for="cbHeight") Высота (h)
+            .col-12.col-sm-6
+              .form-check
+                input#cbArea.form-check-input(type="checkbox" checked)
+                label.form-check-label(for="cbArea") Площадь (S)
+            .col-12.col-sm-6
+              .form-check
+                input#cbInradius.form-check-input(type="checkbox" checked)
+                label.form-check-label(for="cbInradius") Радиус вписанной окружности (r)
+            .col-12.col-sm-6
+              .form-check
+                input#cbPerimeter.form-check-input(type="checkbox" checked)
+                label.form-check-label(for="cbPerimeter") Периметр (P)
+
+          .error-msg.mt-2#err-checkboxes(hidden) Выберите хотя бы одну характеристику.
+
+        section.d-flex.gap-2.flex-wrap.mb-4
+          button#btnCalc.btn.btn-outline-light(type="button") Вычислить
+          button#btnClear.btn.btn-outline-secondary(type="button") Очистить
+
+        section.card.p-3
+          h5.mb-3 Результаты
+          #results.result-box.text-start.text-white-50
+            | Здесь появятся результаты после вычисления.
+
+block scripts
+  script(src="assets/js/calculator.js")

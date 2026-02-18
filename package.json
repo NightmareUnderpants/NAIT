@@ -7,8 +7,10 @@
     "build:index": "pug src/pug/pages/index.pug --out dist --pretty",
     "build:games": "node src/js/build-games.js",
     "build:tables": "node src/js/build-tables.js",
+    "build:calculator": "node src/js/build-calculator.js",
     "build:stylus": "stylus src/stylus/main.styl -o dist/assets/css",
-    "build": "npm run build:index && npm run build:games && npm run build:tables && npm run build:stylus"
+    "build": "npm run build:index && npm run build:games && npm run build:tables && npm run build:calculator && npm run build:stylus && npm run copy:js",
+    "copy:js": "powershell -NoProfile -Command \"New-Item -ItemType Directory -Force dist/assets/js | Out-Null; Copy-Item -Recurse -Force src/js/* dist/assets/js/\""
   },
   "keywords": [],
   "author": "",
