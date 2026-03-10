@@ -1,3 +1,22 @@
 test_lab.js
 20 (1).png
 zadaniya
+
+// mixin redChess(tableC)        
+//     style.        
+//         #{tableC} tbody tr:nth-child(odd) td:nth-child(odd),        
+//         #{tableC} tbody tr:nth-child(even) td:nth-child(even) {        
+//             background-color: #ff8787;        
+//         }        
+
+// mixin redRows(tableC)        
+//     style.        
+//         #{tableC} tbody tr:nth-child(even) td {        
+//             background-color: #ff8787;        
+//         }        
+
+// mixin redCols(tableC)        
+//     style.        
+//         #{tableC} tbody tr td:nth-child(even) {        
+//             background-color: #ff8787;        
+//         }

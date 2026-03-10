@@ -1,36 +1,23 @@
-extends ../layouts/base.pug
+﻿extends ../layouts/base.pug
+
+include ../partials/mixins.pug
 
 block vars
   - var title = "Табличные данные"
   - var currentPage = "tables"
+  include ../data/tableData.pug
 
 block content
+
   .container.my-4
     h1.text-center Табличные данные
 
     h3.text-center.mt-4 Данные отдельных пользователей
 
-    .table-responsive.mt-3
-      table.table.table-dark.table-striped.table-bordered.align-middle.text-center
-        thead
-          tr
-            th(style="min-width:60px") ID
-            th(style="min-width:160px") Игра в которую играл
-            th(style="min-width:240px") Продолжительность игровой сессии (минуты)
-            th(style="min-width:240px") Производительность и стабильность (к/сек)
-            th(style="min-width:180px") Отзыв игрока (от 1 до 10)
-        tbody
-          each r in data.rows
-            tr
-              td= r.id
-              td= r.game
-              td= r.duration
-              td= r.performance
-              td= r.review
+    +table(rows)
 
     hr.my-4
 
-    //- CHART SETTINGS
     h3.text-center Настройка графика
     form.card.card-soft.p-3.table-page__card(action="/generate-chart" method="post")
       .row.g-3
@@ -65,7 +52,6 @@ block content
 
     hr.my-4
 
-    //- SORT
     h3.text-center Сортировка данных
     form.card.card-soft.p-3.table-page__card(action="/sort-data" method="get")
       .row.g-3

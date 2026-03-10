@@ -1,0 +1,44 @@
+﻿mixin navItem(pageKey, href)
+  li.nav-item
+    a.nav-link(class=currentPage === pageKey ? "active" : "" href=href)
+      block
+
+mixin table(rows)
+  if rows && rows.length
+    .table-responsive.mt-3.table-wrapper
+      table#table.table.table-dark.table-striped.table-bordered.align-middle.text-center.custom-table
+        thead
+          tr
+            each key in Object.keys(rows[0])
+              th= key
+        tbody
+          each row in rows
+            tr
+              each value in Object.values(row)
+                td= value
+  else
+    .table-responsive.mt-3.table-wrapper
+      table#table.table.table-dark.table-striped.table-bordered.align-middle.text-center.custom-table
+        thead
+          tr
+            th id
+            th game
+            th duration
+            th performance
+            th review
+
+mixin gameItems(games)
+  each game in gamesData
+    section.card.card-soft.p-3.mb-4
+      .row.g-3.align-items-stretch
+
+        .col-12.col-lg-5
+          .ratio.ratio-16x9.rounded.overflow-hidden.border.border-light-subtle
+            img.w-100.h-100(src=game.image alt=game.title style="object-fit:cover;")
+
+        .col-12.col-lg-7
+          h3.mb-2.text-light= game.title
+          p.mb-2.text-white-50
+            span.fw-semibold Жанр:
+            |  #{game.genre}
+          p.mb-0.text-light.text-start= game.description

@@ -5,8 +5,8 @@
   "main": "test_lab.js",
   "scripts": {
     "build:index": "pug src/pug/pages/index.pug --out dist --pretty",
-    "build:games": "node src/js/build-games.js",
-    "build:tables": "node src/js/build-tables.js",
+    "build:games": "pug src/pug/pages/games.pug --out dist --pretty",
+    "build:tables": "pug src/pug/pages/tables.pug --out dist --pretty",
     "build:stylus": "stylus src/stylus/main.styl -o dist/assets/css",
     "build": "npm run build:index && npm run build:games && npm run build:tables && npm run build:stylus"
   },
